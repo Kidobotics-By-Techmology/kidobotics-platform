@@ -1,6 +1,7 @@
 import { Vector3, Color3 } from "@babylonjs/core";
 import { Scene, Engine } from "react-babylonjs";
 import "@babylonjs/loaders";
+import React from "react";
 
 const GROUND_SIZE = 1000;
 
