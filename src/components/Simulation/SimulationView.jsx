@@ -128,7 +128,7 @@ function SimulationView() {
   };
 
   return (
-    <div className="flex flex-row ">
+    <div className="flex flex-row bg-green">
       <div className="w-1/6 p-4 overflow-y-auto max-h-screen bg-yellow">
         <ul className="flex flex-col items-center space-y-4">
           {modelData.map((model) => (
