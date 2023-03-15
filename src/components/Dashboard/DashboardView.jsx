@@ -7,7 +7,7 @@ export default function DashboardView() {
       <Sidebar />
       <main className="flex-grow p-6">
         <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-        <p>
+        <p className="select-none">
           Welcome to your dashboard! check out the simulation from the navbar
         </p>
       </main>
