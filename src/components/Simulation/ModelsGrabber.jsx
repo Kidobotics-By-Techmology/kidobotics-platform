@@ -57,6 +57,7 @@ export default function ModelsGrabber({ models }) {
                   ); // should be -15 for torus
                 },
               });
+
               modelNode.addBehavior(dragBehavior);
               // scale the model
             },

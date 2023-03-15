@@ -129,7 +129,13 @@ function SimulationView() {
 
   return (
     <div className="flex flex-row bg-green">
-      <div className="w-1/6 p-4 overflow-y-auto max-h-screen bg-yellow">
+      <div className="w-4/6 p-4">
+        <MainScene>
+          <ModelsGrabber models={models} />
+        </MainScene>
+      </div>
+
+      <div className="w-2/6 p-4 overflow-y-auto max-h-screen bg-yellow">
         <ul className="flex flex-col items-center space-y-4">
           {modelData.map((model) => (
             <button onClick={model.click}>
@@ -150,11 +156,6 @@ function SimulationView() {
             </button>
           ))}
         </ul>
-      </div>
-      <div className="w-5/6 p-4">
-        <MainScene>
-          <ModelsGrabber models={models} />
-        </MainScene>
       </div>
     </div>
   );

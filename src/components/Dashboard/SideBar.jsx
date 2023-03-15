@@ -1,6 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import React from "react";
+import SideBarItem from "./SideBarItem";
+import {
+  FaRegChartBar,
+  FaBook,
+  FaClipboardList,
+  FaLeanpub,
+  FaUsers,
+  FaTrophy,
+  FaComment,
+  FaPhone,
+  FaGamepad,
+  FaRobot,
+} from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -10,99 +22,32 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-56 bg-gray-800 text-white">
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-900">
+    <div className="flex-col h-screen w-56 bg-gray-800 text-white">
+      <div className="items-center justify-between px-4 py-3 bg-blue">
         <h1 className="text-lg font-semibold">Dashboard</h1>
-        <button
-          className="focus:outline-none lg:hidden"
-          onClick={toggleSidebar}
-        >
-          <svg
-            className="w-6 h-6 fill-current"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {isOpen ? (
-              <path
-                d="M18 6L6 18M6 6l12 12"
-                stroke="#fff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            ) : (
-              <path
-                d="M3 12h18M3 6h18M3 18h18"
-                stroke="#fff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            )}
-          </svg>
-        </button>
       </div>
-      <nav className={`flex flex-col flex-grow py-4 px-4 bg-gray-800`}>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Dashboard
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Lessons
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Tasks
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Class
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Schedule
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Champion Ranks
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Messages
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Video Meeting
-        </Link>
-        <Link
-          to="/simulation"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Simulation
-        </Link>
-        <Link
-          to="/dashboard"
-          className="text-gray-300 hover:text-white py-2 px-3"
-        >
-          Products
-        </Link>
+      <nav className={`flex flex-col flex-grow py-4 px-4 bg-blue`}>
+        <SideBarItem to="/dashboard" icon={FaRegChartBar} text="Dashboard" />
+        <SideBarItem to="/dashboard" icon={FaBook} text="Lessons" />
+        <SideBarItem to="/dashboard" icon={FaClipboardList} text="Tasks" />
+        <SideBarItem to="/dashboard" icon={FaLeanpub} text="Resources" />
+        <SideBarItem to="/dashboard" icon={FaUsers} text="Schedule" />
+        <SideBarItem to="/dashboard" icon={FaTrophy} text="Champion Ranks" />
+        <hr className="my-4 border-gray-700" />
+        <h1 className="my-3 text-sm font-semibold">Teachers</h1>
+        <SideBarItem to="/dashboard" icon={FaComment} text="Messages" />
+        <SideBarItem to="/dashboard" icon={FaPhone} text="Video Meeting" />
+        <hr className="my-4 border-gray-700" />
+        <h1 className="my-3 text-sm font-semibold">Tools</h1>
+        <SideBarItem to="/simulation" icon={FaGamepad} text="Simulation" />
+        <SideBarItem to="/dashboard" icon={FaRobot} text="Products" />
+        <div className="bg-white rounded-xl flex  flex-col my-3 mt-6">
+          <img
+            className="px-8 py-2"
+            alt="techmology logo"
+            src={process.env.PUBLIC_URL + "/logo.png"}
+          />
+        </div>
       </nav>
     </div>
   );
